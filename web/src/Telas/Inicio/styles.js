@@ -1,11 +1,10 @@
-import styled from 'styled-components';
+import Styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = Styled.div`
         width: 100%;
 `
 
-
-export const ContainerFilter = styled.div`
+export const ContainerFilter = Styled.div`
                 
                 width: 100%;
                 display: flex;
@@ -16,5 +15,13 @@ export const ContainerFilter = styled.div`
                         background: none;
                         border: none;
                 }
+
+`
+
+export const ContainerCard = Styled.div`
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
 
 `

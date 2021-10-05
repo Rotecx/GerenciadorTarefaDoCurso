@@ -1,9 +1,24 @@
 import React, {useState} from 'react';
 import * as Styled from './styles';
-import Header from '../../componentes/Header'
-import Footer from '../../componentes/Footer'
-import Filter from '../../componentes/filter'
+
+/* IMAGENS */
 import img from '../../imagens/filter2.png'
+import academia from '../../imagens/academia.jpg'
+import cinema from '../../imagens/cinema.png'
+import compra from '../../imagens/compra.jpg'
+import futebol from '../../imagens/futebol.jpg'
+import lanche from '../../imagens/lanche.jpg'
+import prova from '../../imagens/prova.jpg'
+import trabalho from '../../imagens/trabalho.png'
+import viagem from '../../imagens/viagem.png'
+
+
+/* componentes  */
+import Header from '../../componentes/Header';
+import Footer from '../../componentes/Footer';
+import Filter from '../../componentes/filter';
+import TaskCard from '../../componentes/TaskCard';
+
 
 function Home() {
 
@@ -31,7 +46,17 @@ function Home() {
               </button>
             
             </Styled.ContainerFilter>       
-      
+            
+            <Styled.ContainerCard>
+                < TaskCard img={academia} title="Academia"/>
+                < TaskCard img={cinema} title="Cinema"/>
+                < TaskCard img={compra} title="Compra"/>
+                < TaskCard img={futebol} title="Futebol"/>
+                < TaskCard img={lanche} title="Lanche"/>
+                < TaskCard img={prova} title="Prova"/>
+                < TaskCard img={trabalho} title="Trabalho"/>
+                < TaskCard img={viagem} title="Viagem"/>
+            </Styled.ContainerCard>  
     </Styled.Container>
   )
 }
