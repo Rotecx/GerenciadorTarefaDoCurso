@@ -4,14 +4,6 @@ import api from '../../services/api'
 
 /* IMAGENS */
 import img from '../../imagens/filter2.png'
-import academia from '../../imagens/academia.jpg'
-import cinema from '../../imagens/cinema.png'
-import compra from '../../imagens/compra.jpg'
-import futebol from '../../imagens/futebol.jpg'
-import lanche from '../../imagens/lanche.jpg'
-import prova from '../../imagens/prova.jpg'
-import trabalho from '../../imagens/trabalho.png'
-import viagem from '../../imagens/viagem.png'
 
 
 /* componentes  */
@@ -70,9 +62,8 @@ function Home() {
                 {
                   tasks.map(
                     t => (
-                      <TaskCard />
-                    )
-                  )
+                      <TaskCard type={t.type} title={t.title} when={t.when} />
+                    ))
                 }
             </Styled.ContainerCard>  
     </Styled.Container>
