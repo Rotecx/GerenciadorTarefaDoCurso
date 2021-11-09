@@ -75,13 +75,3 @@ export default Home;
 
 
 
-/*
-< TaskCard img={academia} title="Academia"/>
-                < TaskCard img={cinema} title="Cinema"/>
-                < TaskCard img={compra} title="Compra"/>
-                < TaskCard img={futebol} title="Futebol"/>
-                < TaskCard img={lanche} title="Lanche"/>
-                < TaskCard img={prova} title="Prova"/>
-                < TaskCard img={trabalho} title="Trabalho"/>
-                < TaskCard img={viagem} title="Viagem"/>
- */

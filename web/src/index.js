@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Home from './Telas/Inicio';
-
+import Task from './Telas/tarefas';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Home />
+    <Task />
   </React.StrictMode>,
   document.getElementById('root')
 );
