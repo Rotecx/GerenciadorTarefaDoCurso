@@ -63,3 +63,46 @@ export const textArea = styled.div`
                border: 1px solid #FFD700;
        }
 `  
+export const Option = styled.div`
+       display: flex;
+       justify-content: space-between;
+      
+       button{
+           font-weight: bold;
+           color: #FFD700;
+           border: none;
+           background: none;
+           cursor: pointer;
+           font-size: 15px;
+
+           &:hover{
+               opacity: 0.7;
+           }
+       }
+
+       div{
+        display: flex;
+        align-items: center;
+        color: #FFD700;
+        font-size: 15px;
+    }
+`
+export const Save = styled.div`
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 20px;
+       
+       button{
+        width: 70%;
+        justify-content: space-between;
+        background: #FFD700;
+        border: none;
+        font-size: 20px;
+        color: white;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+      
+` 

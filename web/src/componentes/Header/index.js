@@ -1,5 +1,6 @@
 import React from 'react'
 import * as Styled from './styles'
+import { Link } from "react-router-dom";
 
 
 function Header(){
@@ -7,9 +8,9 @@ function Header(){
         
         <Styled.Container>
           <Styled.Menu>
-                <a href="">INÍCIO</a>
+                <Link to="/">INÍCIO</Link>
                 <span className="separador"    / >
-                <a href="">TAREFA</a>
+                <Link to="/Task">TAREFA</Link>
           </Styled.Menu>
         </Styled.Container>
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './Telas/Inicio';
-import Task from './Telas/tarefas';
+
+import Rout from './routes/index';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Task />
+    <Rout />
   </React.StrictMode>,
   document.getElementById('root')
 );

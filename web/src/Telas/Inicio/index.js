@@ -20,7 +20,7 @@ function Home() {
   const [tasks, setTasks] = useState([]);
 
   async function loadTask(){
-    await api.get(`/task/filter/${filterActive}/14:22:33:44:55:66`)
+    await api.get(`/task/filter/${filterActive}/12:22:33:44:55:66`)
     .then(response => {
       setTasks(response.data)
 
