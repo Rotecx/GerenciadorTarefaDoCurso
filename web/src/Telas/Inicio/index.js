@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import * as Styled from './styles';
 import api from '../../services/api'
 
+import {Link} from 'react-router-dom'
+
 /* IMAGENS */
 import img from '../../imagens/filter2.png'
 
@@ -15,7 +17,7 @@ import TaskCard from '../../componentes/TaskCard';
 
 function Home() {
 
-  const [filterActive, functionFilter] = useState('today');
+  const [filterActive, functionFilter] = useState('all');
 
   const [tasks, setTasks] = useState([]);
 
@@ -23,12 +25,11 @@ function Home() {
     await api.get(`/task/filter/${filterActive}/12:22:33:44:55:66`)
     .then(response => {
       setTasks(response.data)
-
     })
   }
   
   useEffect(() => {
-    loadTask()
+    loadTask();
   }, [filterActive])
 
   return (
@@ -62,7 +63,9 @@ function Home() {
                 {
                   tasks.map(
                     t => (
+                      <Link to={`/task/${t._id}`}>
                       <TaskCard type={t.type} title={t.title} when={t.when} />
+                      </Link>
                     ))
                 }
             </Styled.ContainerCard>  

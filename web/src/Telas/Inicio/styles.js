@@ -24,4 +24,9 @@ export const ContainerCard = Styled.div`
                 flex-wrap: wrap;
                 justify-content: center;
 
+                a{
+                        text-decoration:none;
+                        color: #000;
+                }
+
 `

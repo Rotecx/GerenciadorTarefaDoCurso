@@ -88,14 +88,14 @@ export const Option = styled.div`
     }
 `
 export const Save = styled.div`
-        align-items: center;
-        justify-content: space-between;
         width: 100%;
         margin-top: 20px;
        
        button{
-        width: 70%;
-        justify-content: space-between;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
         background: #FFD700;
         border: none;
         font-size: 20px;

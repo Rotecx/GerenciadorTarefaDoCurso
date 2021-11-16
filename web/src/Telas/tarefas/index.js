@@ -1,6 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import * as styled from './styles';
-import api from '../../services/api'
+import api from '../../services/api';
+import { format } from 'date-fns';
+
+import { useParams } from 'react-router';
+import { Navigate } from 'react-router';
 
 /* IMAGENS */
 import img from '../../imagens/filter2.png'
@@ -19,6 +23,9 @@ import Styled from 'styled-components';
 
 function Task() {
 
+  const {id} = useParams();
+
+ const [navigate, setNavigate] = useState(false);
  const [type, setType] = useState();
  const [done, setDone] = useState(false);
  const [title, setTitle] = useState();
@@ -28,20 +35,49 @@ function Task() {
  const [macadress, setMacadress] = useState('12:22:33:44:55:66');
 
  async function save(){
-   await api.post('/task', {
-     macadress,
-     type,
-     title,
-     description,
-     when:`${date}T${hour}:00.000`
-   })
-   .then(()=> alert("A TAREFA FOI CADASTRADA COM SUCESSO!"))
+ if(id){
+  await api.put(`/task/${id}`, {
+    macadress,
+    done,
+    type,
+    title,
+    description,
+    when:`${date}T${hour}:00.000`
+  }).then(() => setNavigate(true))
+ }else {
+    await api.post('/task', {
+      macadress,
+      type,
+      title,
+      description,
+      when:`${date}T${hour}:00.000`
+    }).then(() => setNavigate(true))
+  }
+ 
+   
  }
+
+ async function loadTask(){
+
+  await api.get(`/task/${id}`) 
+   .then( response => {
+    setType(response.data.type)
+    setTitle(response.data.title)
+    setDescription(response.data.description)
+    setDate(format(new Date(response.data.when), 'yyyy-MM-dd'))
+    setHour(format(new Date(response.data.when), 'HH:mm'))
+    
+   })
+ }
+
+    useEffect(() =>{
+      loadTask();
+    },[])
 
   return (
     <styled.Container>
+      {navigate && <Navigate to="/"></Navigate> }
       <Header />
-
         <styled.Form>
           <styled.icons>
             {
@@ -91,5 +127,3 @@ function Task() {
 
 
 export default Task;
-
-
